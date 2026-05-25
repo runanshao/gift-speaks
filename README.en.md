@@ -7,8 +7,6 @@
 
 Languages: [中文](README.md) | [English](README.en.md) | [日本語](README.ja.md)
 
-![Demo](demo/demo.gif)
-
 ## What is this
 
 A Claude skill. It helps you choose a gift that **actually lands** for the person you're in an intimate relationship with — not a trending gift list, not AI clichés, but 3 personalized "gift + message + how to give it" combos built from **private details in your own notes**.

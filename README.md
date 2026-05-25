@@ -7,8 +7,6 @@
 
 Languages: [中文](README.md) | [English](README.en.md) | [日本語](README.ja.md)
 
-![Demo](demo/demo.gif)
-
 ## 这是什么
 
 一个 Claude skill。它帮你给亲密关系里的那个 TA 选一份**真的戳到心里**的礼物——不是热门榜单，不是 AI 套话，而是**基于你笔记里 TA 的私密细节**生成的 3 套「礼物 + 文案 + 怎么送」组合。
