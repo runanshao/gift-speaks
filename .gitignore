@@ -1,0 +1,24 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Node (in case anyone adds tooling later)
+node_modules/
+npm-debug.log*
+
+# Python (in case)
+__pycache__/
+*.pyc
+.venv/
+
+# Local notes the user might drop in for testing
+local-notes/
+test-vault/
+*.local.md
