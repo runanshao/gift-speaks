@@ -2,9 +2,26 @@
 
 Triggered only if Round 1 marked the information as insufficient. Otherwise skip.
 
+## Two entry types — handle differently
+
+### Entry type A: Desire-expression (user stated a goal, not a situation)
+
+Examples: "我想送一个能送到她心坎里的礼物" / "I want to give her something that actually lands" / "想给她一个惊喜"
+
+These users know what they WANT TO ACHIEVE but haven't described the situation. Do NOT treat this as vague — it tells you the user cares about impact. Respond warmly acknowledging the goal, then ask for context:
+
+> "送到心坎里——这个我们能做到。
+>  告诉我：这是什么场合，或者你最近为什么想送礼物？"
+
+One question only. Then proceed to collect a memory-trigger detail (see below).
+
+### Entry type B: Insufficient situation (user described a situation but key signals are missing)
+
+Use the memory-trigger questions below.
+
 ## Hard rules
 
-- Maximum 2 questions. Prefer 1.
+- Maximum 2 questions total across Round 2. Prefer 1.
 - Each question must trigger a **specific memory**, not request a category.
 - Frame as conversation, not as a form.
 
@@ -52,6 +69,12 @@ If the user is about to give you a folder path (Obsidian vault, notes folder), o
 ```
 
 Translate to the user's language. Wait for their answer before reading.
+
+## Conversation IS the material
+
+Any specific detail the user shares in Round 2 — a moment, a complaint, a habit, something they mentioned wanting — counts as material. Treat it the same as pasted notes. You do NOT need a notes file or folder to generate accurate plans.
+
+The only true "no material" state is when, after Round 2, the user has provided ZERO specific details (only generic statements like "she likes nice things"). Even then, do not apologize — proceed with scene signals and say so honestly in the basis field.
 
 ## After Round 2
 

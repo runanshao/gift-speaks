@@ -6,10 +6,11 @@ Output this exact greeting (translate naturally to the user's detected language;
 
 嗨～你来这里，说明心里有个 TA。
 
-跟我说说你现在的处境吧——可以是任何关于 TA 和你的事。
-你不用想得太完整，第一反应告诉我就行。
+跟我说说吧——可以是你现在的处境，也可以就说你想做到什么。
+第一反应告诉我就行，不用整理好再说。
 
 🌰 比如：
+  · "我想送一个能送到她心坎里的礼物"
   · "下周是我老婆生日，刚搬完家她特别累，想给她个惊喜"
   · "和女朋友冷战三天，因为我忘了她妈手术那天，想道歉"
   · "她最近考研压力很大，我心疼她"
@@ -29,9 +30,10 @@ Output this exact greeting (translate naturally to the user's detected language;
 
 English version:
 > Hey — you're here, which means there's someone on your mind.
-> Tell me what's going on. Anything about you two, doesn't have to be polished. First thought is fine.
+> Tell me what's going on — or just say what you're trying to do. First thought is fine.
 >
 > 🌰 For example:
+>   · "I want to give her something that actually lands"
 >   · "It's my wife's birthday next week, we just moved, she's exhausted"
 >   · "We've been in a cold war 3 days — I forgot her mom's surgery date, I want to apologize"
 >   · "She's drowning in exam prep, I just feel for her"

@@ -61,12 +61,14 @@ If the user is in a different country/currency context, adapt channels (Etsy / A
 
 This field justifies the recommendation. It MUST do ONE of:
 
-- Quote a specific private detail from the material with a rough date if available
+- Quote a specific private detail — from notes, pasted text, OR anything the user said in conversation
   → "基于你 2025-09-12 日记里她抱怨办公室味道"
-- If no material, explain which scene signal drove the choice
+  → "基于你说她最近总是把自己排在最后"
+  → "基于你说她提过'想和闺蜜聚一聚'"
+- If the user provided only scene context and no specific detail, explain which signal drove the choice
   → "基于你说'刚搬完家她特别累'——搬家季的疲惫提示她需要小确幸而非大场面"
 
-NEVER fabricate a detail. If material yielded nothing, say so honestly here.
+Conversation details count the same as notes. NEVER fabricate. Only if zero specific information exists after Round 2, say so honestly and use scene signals instead.
 
 ## Hard requirements on the 💬 Talking-point field
 
