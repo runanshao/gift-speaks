@@ -46,7 +46,7 @@ Claude スキルです。パートナー・恋人・気になる人への**本�
 
 1. リポジトリをクローン：
    ```bash
-   git clone https://github.com/runan/gift-speaks.git
+   git clone https://github.com/runanshao/gift-speaks.git
    ```
 
 2. Claude のスキルディレクトリにコピー：

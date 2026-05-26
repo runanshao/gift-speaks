@@ -46,7 +46,7 @@ Languages: [中文](README.md) | [English](README.en.md) | [日本語](README.ja
 
 1. 把这个 repo clone 下来：
    ```bash
-   git clone https://github.com/runan/gift-speaks.git
+   git clone https://github.com/runanshao/gift-speaks.git
    ```
 
 2. 复制到 Claude 的 skills 目录：

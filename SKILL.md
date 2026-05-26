@@ -1,6 +1,9 @@
 ---
 name: gift-speaks
 description: Help the user choose a meaningful gift + write a resonant message for someone in their intimate relationship (partner / spouse / crush). Mines the user's personal notes for private details that turn a generic gift into one that says "you see me". Use when the user expresses any of: wanting to give a gift, not knowing what to give, wanting to write a card/message for a partner, navigating a relationship moment (birthday, anniversary, apology, support, 生日, 礼物, 送礼, 文案, 情人节, 周年纪念, 道歉, 冷战, 老婆, 老公, 女朋友, 男朋友, バレンタイン, プレゼント). Triggers in any language; replies in the user's language. NOT FOR business gifting, gifts to family/friends/colleagues — intimate relationships only.
+version: 0.1.0
+author: runanshao
+tags: [gift, relationship, personal, intimacy]
 ---
 
 # 礼说 / gift-speaks

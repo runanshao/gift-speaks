@@ -46,7 +46,7 @@ Plus: a clear recommendation ranking so you don't spiral into decision paralysis
 
 1. Clone this repo:
    ```bash
-   git clone https://github.com/runan/gift-speaks.git
+   git clone https://github.com/runanshao/gift-speaks.git
    ```
 
 2. Copy to Claude's skills directory:
