@@ -9,7 +9,7 @@ Languages: [中文](README.md) | [English](README.en.md) | [日本語](README.ja
 
 ## What is this
 
-A Claude skill. It helps you choose a gift that **actually lands** for the person you're in an intimate relationship with — not a trending gift list, not AI clichés, but 3 personalized "gift + message + how to give it" combos built from **private details in your own notes**.
+A Claude skill. It helps you choose a gift that **actually lands** for the person you're in an intimate relationship with — not a trending gift list, not AI clichés, but 3 personalized "gift + message + how to give it" combos built from **what you know about them and your situation**. Have notes? Use them. Don't? A short conversation works just as well.
 
 **Core belief: the purpose of a gift is to deepen trust between two people.**
 
@@ -19,7 +19,7 @@ A Claude skill. It helps you choose a gift that **actually lands** for the perso
 
 Input:
 > "It's my wife's birthday next week. We just moved and she's exhausted."
-> + your notes folder (or paste a few excerpts)
+> Then a short conversation — or paste details you've noted down, or nothing at all
 
 Output (3 plans, each with 5 fields):
 - 🎁 Specific gift (model / price / where to buy / delivery time)
