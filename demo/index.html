@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>礼说 / gift-speaks — Demo</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", sans-serif;
+      background: #FDF8F0;
+      color: #1C1C1C;
+      line-height: 1.7;
+    }
+
+    /* ── Header ── */
+    header {
+      text-align: center;
+      padding: 56px 24px 40px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+    header .tagline {
+      font-size: 1.15rem;
+      color: #6B5B45;
+      margin-bottom: 20px;
+    }
+    header .sub {
+      font-size: 0.9rem;
+      color: #9C8B78;
+    }
+    header .sub a {
+      color: #9C8B78;
+      text-decoration: underline;
+    }
+
+    /* ── Section labels ── */
+    .section-label {
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #9C8B78;
+      margin: 48px 0 24px;
+    }
+
+    /* ── Case card ── */
+    .case {
+      max-width: 1000px;
+      margin: 0 auto 48px;
+      padding: 0 24px;
+    }
+    .case-header {
+      margin-bottom: 20px;
+    }
+    .case-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #E8DDD0;
+      color: #6B5B45;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+    .case-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    .case-user-msg {
+      display: inline-block;
+      margin-top: 10px;
+      background: #EDE8DF;
+      border-left: 3px solid #C4A882;
+      padding: 10px 16px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.95rem;
+      color: #4A3728;
+      font-style: italic;
+    }
+    .case-user-msg::before {
+      content: "用户说：";
+      font-style: normal;
+      font-weight: 600;
+      margin-right: 6px;
+      color: #8B7355;
+    }
+
+    /* ── Comparison grid ── */
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    @media (max-width: 680px) {
+      .comparison { grid-template-columns: 1fr; }
+    }
+
+    .col-generic, .col-gs {
+      border-radius: 12px;
+      padding: 20px 22px;
+    }
+    .col-generic {
+      background: #F4F2EF;
+      border: 1px solid #E0D9D0;
+    }
+    .col-gs {
+      background: #FFF9F0;
+      border: 1px solid #E8C99A;
+    }
+
+    .col-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .col-generic .col-label { color: #9B9289; }
+    .col-gs .col-label { color: #B07D3A; }
+
+    .col-generic .col-label::before { content: "❌  普通 AI"; }
+    .col-gs .col-label::before { content: "✦  礼说"; }
+
+    .response-text {
+      font-size: 0.9rem;
+      line-height: 1.75;
+    }
+    .col-generic .response-text { color: #6B6560; }
+    .col-gs .response-text { color: #3D2E1E; }
+
+    .field {
+      margin-bottom: 12px;
+    }
+    .field-icon {
+      font-size: 0.85em;
+      margin-right: 4px;
+    }
+    .field-label {
+      font-weight: 600;
+      font-size: 0.82rem;
+      color: #9C6B2E;
+    }
+    .field-value {
+      font-size: 0.88rem;
+      color: #3D2E1E;
+      margin-top: 3px;
+      padding-left: 20px;
+    }
+
+    .highlight-row {
+      background: #FEF3C7;
+      border-radius: 6px;
+      padding: 8px 12px;
+      margin-top: 10px;
+      font-size: 0.82rem;
+      color: #78450A;
+    }
+    .highlight-row strong { color: #5C3407; }
+
+    .crisis-box {
+      background: #FEF3C7;
+      border-left: 3px solid #F59E0B;
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin-bottom: 14px;
+      font-size: 0.85rem;
+      color: #78450A;
+    }
+    .crisis-box strong { display: block; margin-bottom: 4px; }
+
+    .crossed {
+      text-decoration: line-through;
+      color: #A09287;
+      font-size: 0.85rem;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      border-top: 1px solid #E8DDD0;
+      max-width: 600px;
+      margin: 8px auto 0;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 48px 24px;
+      font-size: 0.85rem;
+      color: #9C8B78;
+    }
+    footer a {
+      color: #B07D3A;
+      text-decoration: none;
+    }
+    footer a:hover { text-decoration: underline; }
+    .footer-cta {
+      display: inline-block;
+      margin-top: 16px;
+      background: #1C1C1C;
+      color: #FDF8F0;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .footer-cta:hover { background: #3D2E1E; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>礼说 / gift-speaks</h1>
+  <p class="tagline">把你们之间的细节，变成一份对方能感受到的礼物。</p>
+  <p class="sub">
+    一个 Claude skill ——
+    <a href="https://github.com/runanshao/gift-speaks" target="_blank">GitHub</a>
+  </p>
+</header>
+
+<p class="section-label">三个真实场景 · 普通 AI vs 礼说</p>
+
+<!-- ─────────── CASE 1 ─────────── -->
+<div class="case">
+  <div class="case-header">
+    <span class="case-tag">场景 1 · 生日</span>
+    <h2 class="case-title">老婆生日，刚搬完家很累</h2>
+    <span class="case-user-msg">我老婆下周生日，刚搬完家她特别累。她最近提过想和闺蜜聚一聚，但一直没排上。</span>
+  </div>
+
+  <div class="comparison">
+    <div class="col-generic">
+      <div class="col-label"></div>
+      <div class="response-text">
+        <p>为您的妻子准备一份温馨的生日礼物！推荐：</p>
+        <br>
+        <p>🌸 <strong>礼物</strong>：玫瑰花束 + 香薰蜡烛套装（约¥200-300）</p>
+        <br>
+        <p>💌 <strong>祝福语</strong>：亲爱的，生日快乐！感谢你一直以来的付出，希望你每天都幸福快乐。我爱你❤️</p>
+        <br>
+        <p>建议预订一家浪漫餐厅，共度美好时光～</p>
+      </div>
+    </div>
+
+    <div class="col-gs">
+      <div class="col-label"></div>
+      <div class="response-text">
+        <div class="field">
+          <span class="field-icon">🎁</span><span class="field-label">礼物</span>
+          <div class="field-value">精致下午茶礼盒（小红书搜「TWG 茶叶礼盒」，¥180–280，天猫次日达）+ 便签</div>
+        </div>
+        <div class="field">
+          <span class="field-icon">✉️</span><span class="field-label">文案</span>
+          <div class="field-value">「你说想和闺蜜聚一聚。这些茶，等你们聚的那天用。那天不用管家，就去。」</div>
+        </div>
+        <div class="field">
+          <span class="field-icon">💬</span><span class="field-label">如果她问"你怎么想到的"</span>
+          <div class="field-value">「你说想和她们聚，我就想着，聚的时候得有点好东西。」</div>
+        </div>
+        <div class="highlight-row">
+          <strong>为什么这个戳人：</strong>她说过想聚但一直没排上——礼物把这个愿望往前推了一步。不是猜的，是你记得的。
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ─────────── CASE 2 ─────────── -->
+<div class="case" style="margin-top: 48px;">
+  <div class="case-header">
+    <span class="case-tag">场景 2 · 修复关系</span>
+    <h2 class="case-title">冷战三天，因为忘了她妈手术那天</h2>
+    <span class="case-user-msg">和女朋友冷战三天了，因为我忘了她妈手术那天，想道歉。</span>
+  </div>
+
+  <div class="comparison">
+    <div class="col-generic">
+      <div class="col-label"></div>
+      <div class="response-text">
+        <p>感情中难免有误会，道歉是修复关系的第一步！</p>
+        <br>
+        <p>🌹 <strong>推荐礼物</strong>：一束玫瑰 + 巧克力礼盒（约¥150-200）</p>
+        <br>
+        <p>💌 <strong>道歉信</strong>：亲爱的，我为自己的粗心道歉，你是我最重要的人，请原谅我好吗？我保证以后会更细心的。</p>
+        <br>
+        <p>💡 诚心道歉，送上礼物，她一定会原谅你的～</p>
+      </div>
+    </div>
+
+    <div class="col-gs">
+      <div class="col-label"></div>
+      <div class="response-text">
+        <div class="crisis-box">
+          <strong>⚠️ 先说几句真心话</strong>
+          礼物不是道歉的替代品。TA 真正需要的是：你认真承认错了什么（具体到事）、给 TA 情绪空间、不要急于求"原谅"。礼物只在你把这些做了之后才有用。
+        </div>
+        <div class="field">
+          <span class="field-icon">🎁</span><span class="field-label">礼物</span>
+          <div class="field-value">一封亲手写的信（纸笔，成本¥0-20）</div>
+        </div>
+        <div class="field">
+          <span class="field-icon">✉️</span><span class="field-label">文案</span>
+          <div class="field-value">「那天我不在。我知道你当时有多需要有人陪——不是电话，是真的陪着。对不起。如果你妈下次有任何复查，我想去陪你们。」</div>
+        </div>
+        <div class="highlight-row">
+          <strong>为什么这个方案：</strong>手术那天你不在是核心伤口。信直接命名这件事，不绕弯子。比玫瑰花更诚实。
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ─────────── CASE 3 ─────────── -->
+<div class="case" style="margin-top: 48px;">
+  <div class="case-header">
+    <span class="case-tag">场景 3 · 支持</span>
+    <h2 class="case-title">她压力大，想支持但不打扰</h2>
+    <span class="case-user-msg">她最近考研压力很大，每天复习到凌晨。她说坐下来就胃疼。我心疼她。</span>
+  </div>
+
+  <div class="comparison">
+    <div class="col-generic">
+      <div class="col-label"></div>
+      <div class="response-text">
+        <p>看到另一半努力拼搏真的很感动！以下是一些支持她的礼物建议：</p>
+        <br>
+        <p>🌿 <strong>推荐礼物</strong>：</p>
+        <ul style="padding-left: 20px; margin-top: 6px;">
+          <li>解压香薰精油套装 ¥89</li>
+          <li>暖手宝 ¥59</li>
+          <li>励志便利贴 ¥19</li>
+        </ul>
+        <br>
+        <p>💌 「加油！你是最棒的！相信自己，一定能考上！我会一直支持你！💪」</p>
+        <br>
+        <p>💡 这些小礼物能让她感受到你的关心和支持～</p>
+      </div>
+    </div>
+
+    <div class="col-gs">
+      <div class="col-label"></div>
+      <div class="response-text">
+        <div class="field">
+          <span class="field-icon">🎁</span><span class="field-label">礼物</span>
+          <div class="field-value">这周的晚饭你来做（或外卖统一订好，约¥20–40/天）</div>
+        </div>
+        <div class="field">
+          <span class="field-icon">✉️</span><span class="field-label">文案</span>
+          <div class="field-value">「你不用谢我，也不用感觉欠我什么。你在备考，我在这件事上帮你。这周晚饭我来，每天晚上 7 点前，你继续复习。」</div>
+        </div>
+        <div class="field">
+          <span class="field-icon">💬</span><span class="field-label">如果她问"你怎么想到的"</span>
+          <div class="field-value">「你说坐下来就胃疼，我知道你不是不饿，是顾不上自己。」</div>
+        </div>
+        <div class="highlight-row">
+          <strong>为什么礼物是"做饭"不是"香薰"：</strong>她说"坐下来就胃疼"——身体在求救。晚饭解决的是真实需求。<br><br>
+          <span class="crossed">❌ 不推荐：香薰、暖手宝、"加油你最棒" — 她不需要啦啦队，她需要减负。</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────── Footer ─────────── -->
+<footer>
+  <p>差别不在礼物贵不贵，在有没有命中细节。</p>
+  <p style="margin-top: 8px; color: #B8A898;">礼物的目的是增强人与人之间的信任。</p>
+  <br>
+  <a class="footer-cta" href="https://github.com/runanshao/gift-speaks" target="_blank">
+    在 GitHub 上安装 →
+  </a>
+</footer>
+
+</body>
+</html>
