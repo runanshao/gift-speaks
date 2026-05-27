@@ -1,6 +1,6 @@
 # 礼说 / gift-speaks
 
-> Let your gift speak for you.
+> Turn the details between you two into a gift they can actually feel.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Skill](https://img.shields.io/badge/Claude-Skill-blue.svg)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use)
@@ -9,7 +9,21 @@ Languages: [中文](README.md) | [English](README.en.md) | [日本語](README.ja
 
 ## What is this
 
-A Claude skill. It helps you choose a gift that **actually lands** for the person you're in an intimate relationship with — not a trending gift list, not AI clichés, but 3 personalized "gift + message + how to give it" combos built from **what you know about them and your situation**. Have notes? Use them. Don't? A short conversation works just as well.
+A Claude skill. Not an "AI gift advisor" — it **listens to your story, then turns the details between you two into a gift + message + timing plan that makes them think "you actually see me."**
+
+A short conversation is enough. Notes help, but they're optional.
+
+**Core belief: the purpose of a gift is to deepen trust between two people.**
+
+## Generic AI vs gift-speaks
+
+The difference isn't price. It's whether it hits a real detail.
+
+| Situation | Generic AI says | gift-speaks says |
+|---|---|---|
+| Wife's birthday, exhausted after moving | "Send flowers and candles, or a candlelit dinner to show your love." | Based on you saying she mentioned wanting to catch up with a friend: turn that wish into the gift, with words she can actually use |
+| Cold war for 3 days, want to apologize | "Send roses, write an apology letter expressing your feelings." | First: a gift isn't a substitute for an apology. Then: restrained, low-key plans — won't let you buy your way out of a real conversation |
+| She's under pressure, want to support without intruding | "Send aromatherapy, bath bombs, and a 'you've got this' card." | Based on you saying she "gets a stomachache when she sits down": recommends making dinner all week — the gift is the action, not the object |
 
 **Core belief: the purpose of a gift is to deepen trust between two people.**
 
